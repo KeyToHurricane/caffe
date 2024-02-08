@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coffe to go</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+    
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark color-nav color-textnav">
+    <div class="container">
+      <a class="navbar-brand" href="caffe.html">
+        <img src="logo.png" alt="Logo" width="90" />
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="caffe.html"
+                >Головна</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">Про-НАС</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="foto.html">Фото</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="menu.html">Меню</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="blog.html">Блог</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contacts.html">Контакти</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="intro">
+    <div class="container1">
+      <div class="textin1">
+        <div class="container-intro1">
+          <h1 style="font-weight: 700; font-size: 60px">
+            Готуємо найсмачнішу каву в Харкові!
+          </h1>
+          <h2 class="txt" style="font-weight: 700">
+            Працюємо з 10:00 по 19:00
+          </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="containerdad">
+    <div class="containerdenchik">
+      <div class="containertx1">
+          <div class="colortxt">
+            <h5 class="txt11">Унікальні смаки</h5>
+            <h1 class="txt10">Ласкаво просимо в кафетерій "Coffe to GO"!</h1>
+          </div>
+          <div class="textp">
+            <p>
+              Кав'ярня, яка пропонує неповторний досвід справжнього мистецтва.
+              Ми прагнемо створити ідеальне поєднання між ароматним кавою та
+              затишною атмосферою, щоб кожен наш гість міг насолодитися
+              миттєвістю справжнього задоволення і релаксу.
+            </p>
+            <p>Особливості нашої кав'ярні:</p>
+            <p class="textp1"><span class="nt">✓</span> Якість це головне</p>
+            <p class="textp1">
+              <span class="nt">✓</span> Атмосфера затишку та гостинності.
+            </p>
+            <div class="button">
+              <a href="about.html" class="butcol">Детальніше про нас</a>
+            </div>
+          </div>
+      </div>
+      <div class="containerpic-numb">
+        <div class="containerpic1">
+          <img src="pic0.jpg" alt="">
+        </div>
+        <div class="container-numb">
+          <div>
+            <div class="number" data-max="50">0</div>
+            <span style="font-size: 19px">Різноманітних напоїв</span>
+          </div>
+          <div>
+            <div class="number" data-max="100">0</div>
+            <span style="font-size: 19px">Затишна атмосфера</span>
+          </div>
+          <script>
+            var numbers = [
+              {
+                element: document.querySelector('.number[data-max="50"]'),
+                top: null,
+                start: 0,
+                end: +document.querySelector('.number[data-max="50"]').dataset
+                  .max,
+                sign: "+",
+              },
+              {
+                element: document.querySelector('.number[data-max="100"]'),
+                top: null,
+                start: 0,
+                end: +document.querySelector('.number[data-max="100"]')
+                  .dataset.max,
+                sign: "%",
+              },
+            ];
+            numbers.forEach(function (item) {
+              item.top = item.element.getBoundingClientRect().top;
+              window.addEventListener("scroll", function onScroll() {
+                if (window.pageYOffset > item.top - window.innerHeight / 2) {
+                  this.removeEventListener("scroll", onScroll);
+                  var interval = setInterval(function () {
+                    item.element.innerHTML = ++item.start + item.sign;
+                    if (item.start == item.end) {
+                      clearInterval(interval);
+                    }
+                  }, 5);
+                }
+              });
+            });
+          </script>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="conteiner-section2">
+    <div class="mancontainer">
+      <img width="750px" height="600px" src="fotoman.jpeg" alt="" />
+    </div>
+    <div class="rightbrown">
+      <h6>"Професіонали —</h6>
+      <h1 style="font-size: 60px; font-weight: bolder">
+        Наші баріста - це справжні майстри своєї справи.
+      </h1>
+      <p>
+        Вони мають високу кваліфікацію, пристрасть до кави і творчий підхід.
+        Кожен баріста в нашій команді пройшов навчання і має досвід роботи з
+        сучасним обладнанням. Вони вміють створювати ідеальні кавові
+        композиції, враховуючи уподобання кожного гостя."
+      </p>
+      <div class="button2">
+        <a class="butcol2" href="about.html">НАША КОМАНДА</a>
+      </div>
+    </div>
+  </div>
+  <div class="popular">
+    <p>Популярне</p>
+  </div>
+  <div class="conteiner-section3"></div>
+  <div class="container-fotocava">
+    <div class="divfotocava">
+        <img src="esspresso1.jpg" alt="" width="530px" height="530px">   
+    </div>
+    <div class="divfotocava2">
+      <img src="capuchino1.jpg" alt=""  width="530px" height="530px">
+    </div>
+  </div>
+
+  <div class="justcent">
+    <div class="ptxt">
+      <h1 class="ptit">Еспрессо</h1>
+      <p class="pad">
+        Интенсивный и насыщенный кофейный напиток, извлеченный из
+        свежеобжаренных кофейных зерен.
+      </p>
+      <p class="pad1">
+        Эспрессо обладает богатым вкусом и крепким ароматом, идеально подходит
+        для любителей насыщенного кофе.
+      </p>
+      <p style="padding-top: 10px">
+        <span style="color: #765332"> 200 мл </span>
+        <span style="font-weight: bold"> - 20 грн </span>
+      </p>
+      <p style="padding-top: 10px">
+        <span style="color: #765332"> 250 мл </span>
+        <span style="font-weight: bold"> - 25 грн </span>
+      </p>
+    </div>
+    <div class="ptxt">
+      <h1 class="ptit">Капучіно</h1>
+      <p class="pad">
+        Сочетание эспрессо, горячего молока и пышной молочной пены.
+      </p>
+      <p class="pad1">
+        Имеет сбалансированный вкус с нотами кофе и молока, а его шелковистая
+        текстура доставит вам удовольствие.
+      </p>
+      <p style="padding-top: 10px">
+        <span style="color: #765332"> 250 мл </span>
+        <span style="font-weight: bold"> - 30 грн </span>
+      </p>
+      <p style="padding-top: 10px">
+        <span style="color: #765332"> 300 мл </span>
+        <span style="font-weight: bold"> - 35 грн </span>
+      </p>
+    </div>
+  </div>
+  <div class="button3">
+    <a class="butcol" href="menu.html">ВСЕ НАШЕ МЕНЮ</a>
+  </div>
+  <div class="conteiner-section4">
+    <div class="pad-icons">
+      <div class="conteiner-icons2">
+        <div class="width-ic">
+          <img src="icon1.png" alt="" />
+          <h4 class="txt10-1">Исключительное качество кофе</h4>
+          <p class="txt10-2">Предлагаем только самые высококачественные зерна кофе, которые тщательно выбираются и обжариваются с учетом самых высоких стандартов.</p>
+        </div>
+        <div class="width-ic">
+          <img src="icon2.png" alt="" />
+          <h4 class="txt10-1">Профессионализм и опытность</h4>
+          <p class="txt10-2">Наша команда бариста состоит из профессионалов с богатым опытом в искусстве приготовления кофе.</p>
+        </div>
+        <div class="width-ic">
+          <img src="icon3.png" alt="" />
+          <h4 class="txt10-1">Разнообразие меню</h4>
+          <p class="txt10-2">Предлагаем широкий выбор кофейных напитков, чтобы удовлетворить разнообразные вкусы наших клиентов.</p>
+        </div>
+        <div class="width-ic">
+          <img src="icon4.png" alt="" />
+          <h4 class="txt10-1">Репутация и доверие</h4>
+          <p class="txt10-2">Обладаем репутацией надежного места, где можно насладиться отличным кофе в приятной атмосфере.</p>
+        </div>
+      </div>
+    <div class="pad-collage">
+      <div class="container-collage">
+        <img width="300px" height="548px" src="collage 1.jpg" alt="">
+        <div class="collage">
+          <h1 style="font-weight: 700; margin-bottom: -40px; font-size: 50px;">НАШ ІНСТАГРАМ</h1>
+          <p style="width: 450px; margin: 0 120px; font-weight: 400; font-size: 18px;">Тут ви знайдете яскраві кадри, захоплюючі деталі інтер'єру, професійну приготування кави та посмішки наших відвідувачів. Ці фотографії допоможуть вам поглибитися в атмосферу нашого закладу та поділитися унікальними моментами з друзями.</p>    
+          <a class="white-button" href="foto.html">БІЛЬШЕ ФОТО</a>
+        </div>
+        <img width="300px" height="548px" src="collage2.jpg" alt="">
+      </div>
+    </div>
+  </div>
+  <div class="conteiner-section5">
+    <div class="container-add">   
+        <img width="700px" height="400px" src="fotoman.jpeg" alt="">   
+        <img width="500px" height="400px" src="coffecar.webp" alt="">   
+    </div>
+  </div>
+  </div>
+</body>
+<footer>
+  <div class="footer">
+    <div class="txt-footer">
+      <div class="column1">
+        ЗАДАТИ ПИТАННЯ АБО ЗАБРОНУВАТИ СТОЛИК
+      </div>
+      <div class="column1">         
+        АДРЕСА КАВ'ЯРНІ
+      </div>
+      <div class="column1">
+        КАВ'ЯРНЯ ДЛЯ ВСІЄЇ РОДИНИ
+      </div>
+      <div class="column">
+        info@coffetogo.com
+        +38050-930-5669
+      </div>
+      <div class="column">
+        г. Харків,
+        ул. Євгена Котляра, 12
+      </div>
+      <div class="column">          
+        Для дітей у нашій кав'ярні є окреме меню та кімната, де можна грати з іншими дітьми
+      </div>     
+    </div>
+
+    <div class="container-icons-end">
+      
+    </div>
+
+    <div class="container-end">
+      <div style="color: #fad9a5;">
+        Політика конфіденційності / Угода користувача / Відмова від відповідальності / Мапа сайту
+      </div>
+      <div style="color: #fad9a5;">
+        ТОВ "Coffetogo" / КОД ЄДРПОУ 43477368 / Дата реєстрації 16.08.2018
+      </div> 
+    </div>
+  </div>
+</footer>
+</html>
